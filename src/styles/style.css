@@ -1,0 +1,238 @@
+@import url('https://fonts.cdnfonts.com/css/gotham-bold');
+
+:root{
+  --textos : goldenrod;
+  --pagina :  rgb(99, 86, 14);
+  --pagina2 :  rgb(8, 8, 1);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  min-width: 788px;
+}
+
+h1, h2, button, label, p, input{
+  font-family: 'Gotham Bold', sans-serif;
+}
+
+p, a{
+  font-family: Arial, Helvetica, sans-serif;
+  color: beige; 
+  text-decoration: none;
+}
+
+
+body, header{
+  background-color: var(--pagina2)
+}
+
+
+header .container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.logo h2{
+  padding: 25px 30px;
+  color: goldenrod;
+}
+
+.header_nav{
+  padding: 10px 16px;
+  margin: 20px;
+  background-color:var(--pagina);
+  color: whitesmoke;
+  cursor: pointer; 
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+
+.header_nav:hover,
+.header_nav:focus {
+  background-color: #dfba14;
+}
+
+.principal{
+  height: 300px;
+  overflow: hidden;
+  text-align: center;
+  background-image: url(https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2023/02/GettyImages-1355176914.jpg?w=876&h=484&crop=1);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: -300px;
+}
+
+.divider
+{
+	position: relative;
+	margin-top: 50px;
+	height: 1px;
+}
+
+.div-transparent:before
+{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 5%;
+	right: 5%;
+	width: 90%;
+	height: 1px;
+	background-image: linear-gradient(to right, transparent, rgb(48,49,51), transparent);
+}
+
+.div-arrow-down:after
+{
+	content: "";
+	position: absolute;
+	z-index: 1;
+	top: -7px;
+	left: calc(50% - 7px);
+	width: 14px;
+	height: 14px;
+	transform: rotate(45deg);
+	background-color:rgb(8, 8, 1);
+	border-bottom: 1px solid rgb(48,49,51);
+	border-right: 1px solid rgb(48,49,51);
+}
+
+
+h1.titulo{
+  font-size: 200px;
+  color: var(--textos);
+}
+
+p.subtitulo{
+  font-size: 30px;
+  color: var(--textos);
+  position: relative;
+  left: -10px;
+}
+
+h1.titulo2{
+  font-size: 50px;
+  color: var(--textos);
+  margin-bottom: 10px;
+}
+
+.botao_categoria, .botao_categoria_2 {
+  background-image: linear-gradient(144deg,#f7da5a, #f0f342 50%,#eb6a00);
+  border: 1px solid #dfba14;
+  border-radius: 8px;
+  color: black;
+  font-size: 20px;
+  line-height: 1em;
+  padding: 19px 24px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.botao_categoria_2{
+  background-image: linear-gradient(144deg,#ad4d27, #e06a46 60%,#eb2300);
+  border-radius: 8px;
+  border: 2px solid #eb2300;
+}
+
+.botao_categoria:active,
+.botao_categoria:hover {
+  background-image: linear-gradient(144deg,#f1d869, #e7e96c 50%,#e79552);
+}
+
+.botao_categoria_2:active,
+.botao_categoria_2:hover {
+  background-image: linear-gradient(144deg,#ecac93, #c78875 60%,#7e3d32);
+}
+
+.categoria{
+  margin: 50px;
+  text-align: center;
+}
+
+dialog{
+  margin: auto;
+  text-align: center;
+  border: none;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+dialog::backdrop{
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+}
+
+
+.botao_fechar {
+  display: block;
+  margin-left: auto;
+  border: 1px solid goldenrod;
+  color: goldenrod;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+
+.li_catalogo {
+	position: relative;
+	counter-increment: list;
+	max-width: 45rem;
+	margin: 2rem;
+	padding: 2rem;
+	box-shadow: 0.1rem 0.1rem 1.5rem rgba(255, 251, 3, 0.6);
+	border-radius: 0.25rem;
+	overflow: hidden;
+	background-color: white;
+}
+
+.filme_expandido {
+	position: relative;
+	counter-increment: list;
+	max-width: 45rem;
+	margin: 2rem;
+	padding: 2rem;
+	box-shadow: 0.1rem 0.1rem 1.5rem rgba(255, 251, 3, 0.6);
+	border-radius: 0.25rem;
+	overflow: hidden;
+	background-color:white;
+}
+
+#results{
+  display: inline-block;
+  list-style-type: none;
+  align-items: center;
+  width: 300px;
+  margin-top: 5px;
+}
+
+.li_pesquisa{
+  margin-top: 3px;
+  background: whitesmoke;
+}
+
+.li_pesquisa:hover{
+  cursor: pointer;
+  color: yellow;
+}
+
+
+.black{
+  color: black;
+}
+
+h1.titulo_vermelho{
+  color: #7e3d32
+}
+
+@media screen and (max-width: 1080px) {
+  .principal {
+    background-position-y: -150px;
+  }
+}

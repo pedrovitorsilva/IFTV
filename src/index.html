@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link href="https://fonts.cdnfonts.com/css/gotham-bold" rel="stylesheet" />
+    <script src="./js_pagina/modais.js" defer></script>
+    <script type="module" src="./js_pagina/script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">
+          <h2>IFTV</h2>
+        </div>
+        <nav class="container">
+          <p class="header_nav"><a href="#catalogo">Catálogo </a></p>
+          <p class="header_nav"><a href="#gerar_filmes">Gerar Filmes</a></p>
+          <p class="header_nav"><a href="#exibir_filme">Exibir Filme </a></p>
+          <p class="header_nav">
+            <a href="#pesquisar_tema">Pesquisar por Tema </a>
+          </p>
+        </nav>
+      </div>
+    </header>
+
+    <div class="principal">
+      <h1 class="titulo">IFTV</h1>
+      <p class="subtitulo">Assista seus filmes aqui</p>
+    </div>
+
+    <div class="categoria" id="catalogo">
+      <h1 class="titulo2">Catálogo</h1>
+      <button
+        class="botao_categoria"
+        id="botao_catalogo"
+        onclick="abrir_modal('modal_catalogo')"
+      >
+        Veja o catálogo
+      </button>
+    </div>
+
+    <div class="divider div-transparent div-arrow-down"></div>
+
+    <div class="categoria" id="gerar_filmes">
+      <h1 class="titulo2">Gerar Filmes</h1>
+      <button
+        class="botao_categoria"
+        id="botao_gerar"
+        onclick="abrir_modal('modal_gerar')"
+      >
+        Escolha o número de filmes
+      </button>
+    </div>
+
+    <div class="divider div-transparent div-arrow-down"></div>
+
+    <div class="categoria" id="exibir_filme">
+      <h1 class="titulo2">Exibir Filme</h1>
+      <button
+        class="botao_categoria"
+        id="botao_exibir"
+        onclick="abrir_modal('modal_exibir')"
+      >
+        Escolha seu filme
+      </button>
+    </div>
+
+    <div class="divider div-transparent div-arrow-down"></div>
+
+    <div class="categoria" id="pesquisar_tema">
+      <h1 class="titulo2">Pesquisar por Tema</h1>
+      <button
+        class="botao_categoria"
+        id="botao_pesquisar"
+        onclick="abrir_modal('modal_pesquisar')"
+      >
+        Pesquisar
+      </button>
+    </div>
+
+    <div class="divider div-transparent div-arrow-down"></div>
+
+    <div class="categoria">
+      <h1 class="titulo2 titulo_vermelho">Temas Possíveis</h1>
+      <button
+        class="botao_categoria_2"
+        id="botao_temas_possiveis"
+      >
+      Temas Possíveis
+      </button>
+    </div>
+
+    <!-- Modal de Catalogo-->
+    <dialog id="modal_catalogo">
+      <div class="area_modal">
+        <button class="botao_fechar" onclick="fechar_modal('modal_catalogo')">
+          X
+        </button>
+        <h1 class="titulo2">Catálogo:</h1>
+        <ul id="ul_catalogo">
+          <li class = "li_catalogo">
+            <h3 class="black">
+              O catálogo está vazio. Adicione filmes para ver seu catálogo!
+            </h3>
+          </li>
+        </ul>
+        <h3 class="black">Obs: Os filmes são ordenados automaticamente</h3>
+      </div>
+    </dialog>
+
+    <!-- Modal de Geração de Filmes-->
+    <dialog id="modal_gerar">
+      <div class="area_modal">
+        <button class="botao_fechar" onclick="fechar_modal('modal_gerar')">
+          X
+        </button>
+        <h1 class="titulo2">Gerar Filme:</h1>
+        <form id="formulario_filmes" action="">
+          <label for="quantidade_gerar">
+            Quantos filmes você deseja gerar:
+          </label>
+          <input
+            type="number"
+            name="quantidade_gerar"
+            id="quantidade_gerar"
+            min="1"
+            max="70"
+            value = "10"
+
+          />
+          <input
+            type="submit"
+            value="Gerar"
+            onclick="fechar_modal('modal_gerar')"
+          />
+        </form>
+      </div>
+    </dialog>
+
+    <!-- Modal de Exibição de Filmes-->
+    <dialog id="modal_exibir">
+      <div class="area_modal">
+        <button class="botao_fechar" onclick="fechar_modal('modal_exibir')">
+          X
+        </button>
+        <h1 class="titulo2">Exibir Filme:</h1>
+        <input autocomplete = "off" type="text" id="autocomplete" placeholder="DIGITE O FILME"></input>
+        <input id = "botao_expandir_filme" type="submit" value="Exibir">
+        <p>
+        <ul id="results"></ul>
+        <span id="resultado_pesquisa"></span>
+      </div>
+    </dialog>
+
+    <!-- Modal de Pesquisa-->
+    <dialog id="modal_pesquisar">
+      <div class="area_modal">
+        <button class="botao_fechar" onclick="fechar_modal('modal_pesquisar')">
+          X
+        </button>
+        <h1 class="titulo2">Pesquisa por tema:</h1>
+        <input type="checkbox" value="Acao" id="Acao">
+        <label for="Acao">Ação</label>
+        <br>
+
+        <input type="checkbox" value="Aventura" id="Aventura">
+        <label for="Aventura">Aventura</label>
+        <br>
+
+        <input type="checkbox" value="Comedia" id="Comedia">
+        <label for="Comedia">Comedia</label>
+        <br>
+
+        <input type="checkbox" value="Terror" id="Terror">
+        <label for="Terror">Terror</label>
+        <br>
+        
+        <input type="checkbox" value="Suspense" id="Suspense">
+        <label for="Suspense">Suspense</label>
+        <br>
+        
+        <input type="checkbox" value="Romance" id="Romance">
+        <label for="Romance">Romance</label>
+        <br>
+        
+        <input type="checkbox" value="Documentario" id="Documentario">
+        <label for="Documentario">Documentário</label>
+        <br>
+        
+        <input type="checkbox" value="Drama" id="Drama">
+        <label for="Drama">Drama</label>
+        <br>
+        <button id ="botao_pesquisar_temas">Pesquisar</button>
+      </div>
+      <div id="resultados">
+      </div>
+    </dialog>
+  </body>
+</html>
